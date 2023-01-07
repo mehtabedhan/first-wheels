@@ -8,7 +8,7 @@ export const images={
 export const companyName='First Wheels'
 
 
-export const whatsappNo='+91'
+export const whatsappNo='+916264871687'
 
 export const aboutUs='Filmkatha Studios is a film production company, which is working in making advertisement films, short films and documentary films etc.  since last three years and is working on many projects in future, in Gwalior region.  FilmKatha Studios to increase the awareness of cinema that they will further work on new ideas.'
 export const ourStory=''

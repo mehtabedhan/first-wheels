@@ -32,6 +32,9 @@ const AddVehicle = () => {
 
   const [brand,setBrand]=useState('')
   const [model,setModel]=useState('')
+  const [price,setPrice]=useState('')
+
+
   const [videoURL,setVideoURL]=useState('')
 
 
@@ -209,7 +212,7 @@ const AddVehicle = () => {
 
       
 
-      if(brand==='' || model===''|| !imageAsset){
+      if(brand==='' || model===''|| price===''|| !imageAsset){
         setFields(true)
         setMsg("Required fields can't be empty")
         setAlertStatus('danger')
@@ -225,6 +228,7 @@ const AddVehicle = () => {
 
           brand:brand,
           model:model,
+          price:price,
           seller:seller,
           videoURL:videoURL,
           highlights:highlights,
@@ -272,9 +276,10 @@ const AddVehicle = () => {
   const clearData=()=>{
     setBrand('')
     setModel('')
+    setPrice('')
     setVideoURL('')
     setImageAsset(null)
-   
+    setPhotos([])
     setHighlights({})
     setCurrentHighlights([])
     setCategory('Select Category')
@@ -315,6 +320,12 @@ const AddVehicle = () => {
 
           <div className='w-full py-2 border-b border-gray-300 flex items-center gap-2'>
             <MdTextFields className='text-xl text-gray-700'/>
+            <input type="text" required value={price} placeholder ='Price' onChange={(e)=>{setPrice(e.target.value)}} 
+            className="w-full h-full text-lg bg-transparent font-semibold outline-none border-none placeholder:text-gray-500 text-textColor" />
+          </div>
+
+          <div className='w-full py-2 border-b border-gray-300 flex items-center gap-2'>
+            <MdTextFields className='text-xl text-gray-700'/>
             <input type="text" required value={videoURL} placeholder ='Video URL' onChange={(e)=>{setVideoURL(e.target.value)}} 
             className="w-full h-full text-lg bg-transparent font-semibold outline-none border-none placeholder:text-gray-500 text-textColor" />
           </div>
@@ -333,7 +344,7 @@ const AddVehicle = () => {
 
           
           <div className="w-full">
-            <select onChange={(e)=>{setCategory(e.target.value)}} className="outline-none w-full text-base border-b-2 border-gray-200 p-2 rounded-md cursor-pointer">
+            <select onChange={(e)=>{setSeller(e.target.value)}} className="outline-none w-full text-base border-b-2 border-gray-200 p-2 rounded-md cursor-pointer">
               <option key='o2' value="other 2" className='bg-white'>Select Seller</option>
 
               {sellers&& sellers.map(item=>

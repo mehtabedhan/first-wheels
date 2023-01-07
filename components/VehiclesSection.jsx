@@ -46,7 +46,13 @@ const VehiclesSection = () => {
                       </div>
                  
                      
-                     
+                      <div className='flex justify-center'>
+                           <p className="mb-2 mr-2 flex justify-center font-light text-text-primary lg:mb-4 text-sm lg:text-lg">
+                           {'₹'}</p> 
+                           <p className="mb-2 flex justify-center font-medium text-text-primary lg:mb-4 text-sm lg:text-xl">
+                           {`${(Number(item.price)/100000).toFixed(2)} Lakh`}</p> 
+                       </div>
+
            
                      <div className='flex justify-center'>
                            <p className="mb-2 mr-2 flex justify-center font-light text-text-primary lg:mb-4 text-sm lg:text-lg">
