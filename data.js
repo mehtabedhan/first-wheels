@@ -19,7 +19,7 @@ export const landingPageTitle=
 `Handcrafted Films`
 export const landingPageDescription=
 `We turn your moments into beautiful Handcrafted Films, including
- Pre-Wedding Shoots, Music Videos and more`
+ Pre-Wedding Shoots, Music Visdeos and more`
 
 export const socials=[
     {
